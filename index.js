@@ -36,11 +36,11 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/client', require('./routes/client.js')) // Client routes
+//app.use('/client', require('./routes/client.js')) // Client routes
 app.use('/oauth', require('./routes/auth.js')) // routes to access the auth stuff
 // Note that the next router uses middleware. That protects all routes within this middleware
 app.use('/secure', require('./routes/secure.js')) // routes to access the protected stuff
-app.use('/', (req,res) => res.redirect('/client'))
+//app.use('/', (req,res) => res.redirect('/client'))
 
 
 app.listen(port)
